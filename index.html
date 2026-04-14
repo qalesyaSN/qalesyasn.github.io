@@ -1,1 +1,321 @@
-hiiii
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Full-Stack Integrator & PHP Developer</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkred: '#8B0000',
+                        crimson: '#DC143C',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-dark {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(139, 0, 0, 0.3);
+        }
+        .bg-mesh {
+            background-color: #0a0a0a;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(139, 0, 0, 0.2) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 0, 0, 0.1) 0px, transparent 50%);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #ff5f5f, #8B0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-shadow:hover {
+            box-shadow: 0 10px 30px -10px rgba(139, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-[#0a0a0a] text-slate-300 selection:bg-darkred selection:text-white">
+
+    <!-- Navigasi -->
+    <nav class="fixed w-full z-50 transition-all duration-300 py-6" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex-shrink-0 font-bold text-2xl tracking-tighter text-white group cursor-default">
+                    LOGIC<span class="text-darkred group-hover:text-red-500 transition-colors">DEV.</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-sm font-medium hover:text-darkred transition-colors">Beranda</a>
+                    <a href="#about" class="text-sm font-medium hover:text-darkred transition-colors">Alur Kerja</a>
+                    <a href="#projects" class="text-sm font-medium hover:text-darkred transition-colors">Proyek</a>
+                    <a href="#contact" class="bg-darkred text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-red-700 transition-all transform hover:scale-105 active:scale-95">Hubungi Saya</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="p-2 text-white">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0a] border-b border-darkred/20 absolute w-full left-0 shadow-2xl">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="#home" class="block px-3 py-2 rounded-lg hover:bg-darkred/10">Beranda</a>
+                <a href="#about" class="block px-3 py-2 rounded-lg hover:bg-darkred/10">Alur Kerja</a>
+                <a href="#projects" class="block px-3 py-2 rounded-lg hover:bg-darkred/10">Proyek</a>
+                <a href="#contact" class="block px-3 py-2 text-darkred font-bold">Hubungi Saya</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 bg-mesh relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div>
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 text-xs font-bold tracking-widest text-darkred uppercase bg-darkred/10 border border-darkred/20 rounded-full">
+                    <i data-lucide="terminal" class="w-3 h-3"></i> Full-Stack Solution Provider
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6">
+                    Fokus Pada <br><span class="text-gradient">Logika & Sistem.</span>
+                </h1>
+                <p class="text-lg text-slate-400 mb-10 max-w-lg leading-relaxed">
+                    Saya membantu mewujudkan ide menjadi aplikasi digital yang berfungsi penuh. Menangani <span class="text-white">Frontend</span> hingga <span class="text-white">Backend</span> dengan pendekatan yang praktis dan efisien.
+                </p>
+                <div class="flex flex-wrap gap-5">
+                    <a href="#projects" class="px-8 py-4 bg-darkred text-white rounded-2xl font-bold hover:bg-red-800 transition-all flex items-center group shadow-lg shadow-darkred/20">
+                        Lihat Hasil Karya <i data-lucide="arrow-right" class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hidden md:block relative">
+                <div class="absolute inset-0 bg-darkred/20 rounded-full filter blur-[120px] animate-pulse"></div>
+                <div class="relative bg-[#111] border border-white/10 p-4 rounded-[2rem] shadow-2xl transform hover:rotate-2 transition-transform duration-500">
+                    <div class="flex gap-1.5 mb-4 px-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="space-y-3 font-mono text-sm p-4 text-slate-400">
+                        <p class="text-blue-400">&lt;?php</p>
+                        <p class="ml-4">class <span class="text-yellow-400">Solution</span> {</p>
+                        <p class="ml-8 text-darkred">// Memahami alur sistem murni</p>
+                        <p class="ml-8">public function <span class="text-green-400">buildSystem</span>() {</p>
+                        <p class="ml-12">return [</p>
+                        <p class="ml-16">"logic" => "PHP Native",</p>
+                        <p class="ml-16">"data" => "MySQL",</p>
+                        <p class="ml-16">"result" => "Functional App"</p>
+                        <p class="ml-12">];</p>
+                        <p class="ml-8">}</p>
+                        <p class="ml-4">}</p>
+                        <p class="text-blue-400">?&gt;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About/Process Section -->
+    <section id="about" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-20">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-10 flex items-center gap-4">
+                        <span class="w-12 h-[2px] bg-darkred"></span> Bagaimana Saya Bekerja
+                    </h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
+                                <i data-lucide="layers" class="text-darkred"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold mb-2">End-to-End Handling</h4>
+                                <p class="text-slate-400 leading-relaxed">Mampu menangani seluruh aspek pembuatan web. Meskipun menggunakan template untuk mempercepat estetika, saya memahami cara kerja CSS dan JavaScript untuk melakukan kustomisasi sesuai kebutuhan.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
+                                <i data-lucide="database" class="text-darkred"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold mb-2">PHP & MySQL Logic</h4>
+                                <p class="text-slate-400 leading-relaxed">Memiliki pemahaman kuat pada alur logika backend menggunakan PHP Native. Saya terbiasa mencari solusi melalui dokumentasi dan riset untuk memastikan keamanan serta keakuratan data.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
+                                <i data-lucide="brain-circuit" class="text-darkred"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold mb-2">AI Integration & Modern Tools</h4>
+                                <p class="text-slate-400 leading-relaxed">Memanfaatkan teknologi AI untuk efisiensi tinggi. Saya percaya hasil akhir yang fungsional dan memuaskan klien adalah prioritas utama.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-darkred/5 to-transparent border border-white/5 p-10 rounded-[3rem] self-center">
+                    <h3 class="text-2xl font-bold text-white mb-6">Filosofi Saya</h3>
+                    <p class="text-lg italic text-slate-400 leading-relaxed">
+                        "Tidak perlu menghafal setiap baris kode, yang terpenting adalah memahami alur sistem dan tahu di mana mencari solusi untuk memecahkan masalah."
+                    </p>
+                    <div class="mt-10 flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm font-semibold">PHP Native</span>
+                        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm font-semibold">MySQL</span>
+                        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm font-semibold">Logic Handling</span>
+                        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm font-semibold">AI Workflow</span>
+                        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm font-semibold">Integrator</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-32 bg-white/[0.02]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl font-extrabold text-white mb-4">Proyek Pilihan</h2>
+                    <p class="text-slate-500">Kumpulan hasil kerja nyata yang menggabungkan logika sistem murni dan teknologi modern.</p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Project: Web Esport -->
+                <div class="group card-shadow bg-[#0f0f0f] border border-white/10 rounded-3xl overflow-hidden transition-all duration-300">
+                    <div class="h-48 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-darkred/40 group-hover:bg-transparent transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800" alt="Esport Web" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white">Web Esport System</h3>
+                            <i data-lucide="gamepad-2" class="text-darkred w-5 h-5"></i>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-8 leading-relaxed">Sistem pendaftaran dan manajemen turnamen esport yang dibangun dengan PHP Native murni untuk fleksibilitas kontrol data.</p>
+                        <div class="flex gap-2">
+                            <span class="text-[10px] font-bold px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-400">PHP Native</span>
+                            <span class="text-[10px] font-bold px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-400">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Resepku AI -->
+                <div class="group card-shadow bg-[#0f0f0f] border border-white/10 rounded-3xl overflow-hidden transition-all duration-300">
+                    <div class="h-48 overflow-hidden relative flex items-center justify-center bg-gradient-to-br from-darkred/30 to-[#0a0a0a]">
+                        <i data-lucide="sparkles" class="text-white w-12 h-12 opacity-50 group-hover:scale-125 transition-transform"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white">App Resepku</h3>
+                            <span class="px-2 py-0.5 bg-blue-500/10 text-blue-400 text-[10px] font-bold rounded border border-blue-500/20">AI POWERED</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-8 leading-relaxed">Aplikasi resep Android menggunakan React Expo Go. Dikembangkan sepenuhnya dengan alur kerja AI yang efisien.</p>
+                        <div class="flex gap-2">
+                            <span class="text-[10px] font-bold px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-400">React Expo</span>
+                            <span class="text-[10px] font-bold px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-400">AI Logic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Web Store SMTP -->
+                <div class="group card-shadow bg-[#0f0f0f] border border-white/10 rounded-3xl overflow-hidden transition-all duration-300">
+                    <div class="h-48 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-darkred/40 group-hover:bg-transparent transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=800" alt="Web Store" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white">Web Store SMTP</h3>
+                            <i data-lucide="mail" class="text-darkred w-5 h-5"></i>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-8 leading-relaxed">Pengembangan toko online fungsional yang mengintegrasikan SMTP untuk sistem notifikasi pesanan otomatis via email.</p>
+                        <div class="flex gap-2">
+                            <span class="text-[10px] font-bold px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-400">SMTP</span>
+                            <span class="text-[10px] font-bold px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-400">Backend</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="py-32">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-8">Siap Membangun Sesuatu?</h2>
+            <p class="text-slate-400 text-lg mb-12 max-w-2xl mx-auto">Saya terbuka untuk diskusi mengenai integrasi sistem, pengembangan backend murni, atau konsultasi alur aplikasi digital.</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="mailto:emailanda@domain.com" class="px-10 py-5 bg-darkred text-white rounded-2xl font-bold hover:bg-red-800 transition-all shadow-xl shadow-darkred/20 flex items-center gap-3">
+                    <i data-lucide="mail"></i> Email Saya
+                </a>
+                <div class="flex gap-4">
+                    <a href="#" class="p-5 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="p-5 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div>
+                    <div class="font-bold text-2xl text-white mb-2">LOGIC<span class="text-darkred">DEV.</span></div>
+                    <p class="text-slate-500 text-sm">Praktis. Fungsional. Berbasis Logika.</p>
+                </div>
+                <div class="text-slate-600 text-xs">
+                    &copy; 2024 Portofolio Saya. Semua proyek adalah bukti nyata dari pemahaman sistem.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lucide Icons initialization
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('glass-dark', 'py-4');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.remove('glass-dark', 'py-4');
+                nav.classList.add('py-6');
+            }
+        });
+
+        // Smooth scroll closing mobile menu
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
